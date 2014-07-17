@@ -37,16 +37,17 @@ func SetupDB() *sql.DB {
   db, err := sql.Open("mysql", "a8nv41fd32cqrh1b:a4ik9ulukfzwlqotk7cwv63wv4ojwfc8@tcp(54.208.130.57:14181)/demo_db?charset=utf8")
 	
 	PanicIf(err)
+	
+	ctble, err := db.Query(createTable)
+	PanicIf(err)
+	fmt.Println("Table create successull", ctble)
+	
 	return db
 }
 
 func main() {
 	m := martini.Classic()
 	m.Map(SetupDB())
-
-	ctble, err := db.Query(createTable)
-	PanicIf(err)
-	fmt.Println("Table create successull", ctble)
 
 	// reads "templates" directory by default
 	m.Use(render.Renderer(render.Options{
