@@ -32,8 +32,8 @@ func PanicIf(err error) {
 
 func SetupDB() *sql.DB {
   var err error
-  db, err = sql.Open("mysql", "root@/demo_db")
-	//db, err := sql.Open("mysql", "USER:PASSWORD@tcp(VM IP:VM PORT)/go_dev")
+  //db, err = sql.Open("mysql", "root@/demo_db")
+  db, err := sql.Open("mysql", "am3q31mgyr66mw7j:at5i9jrt5zyo9ofmi4nwrhjyn9m4akdz@tcp(192.168.3.241:29363)/demo_db")
 	PanicIf(err)
 	return db
 }
