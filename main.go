@@ -33,7 +33,7 @@ func PanicIf(err error) {
 func SetupDB() *sql.DB {
   var err error
   //db, err = sql.Open("mysql", "root@/demo_db")
-  db, err := sql.Open("mysql", "am3q31mgyr66mw7j:at5i9jrt5zyo9ofmi4nwrhjyn9m4akdz@tcp(192.168.3.241:29363)/demo_db")
+  db, err := sql.Open("mysql", "a8nv41fd32cqrh1b:a4ik9ulukfzwlqotk7cwv63wv4ojwfc8@tcp(54.208.130.57:14181)/demo_db")
 	PanicIf(err)
 	return db
 }
